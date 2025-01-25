@@ -11,15 +11,20 @@ import QuickLinks from "@/components/Quicklinks";
 import TaskListStatic from "@/components/Tasks";
 import { useNavigation } from "expo-router";
 import { DrawerActions } from "@react-navigation/native";
+import Profile from "@/components/Profile"
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 
 export default function Index() {
-  const Page = () => {
-    const navigation = useNavigation();
+ const navigation = useNavigation();
+ const Stack = createNativeStackNavigator();
 
     const onToggle = () => {
       navigation.dispatch(DrawerActions.openDrawer());
     }
-  }
+    
+  
   return (
     <SafeAreaView className="bg-white h-full">
       <FlatList
@@ -34,7 +39,7 @@ export default function Index() {
           <View className="px-">
             <View className="bg-[#f8e8d8] p-4 flex flex-row justify-between items-center">
               <TouchableOpacity>
-              <Ionicons name="menu" size={40} color="black" />                
+              <Ionicons name="menu" size={40} color="black" onPress={onToggle} />                
               </TouchableOpacity>
               <Image source={require('@/assets/images/logo.png')} className="w-20 h-20 mt-" />
               <TouchableOpacity>
@@ -128,6 +133,7 @@ export default function Index() {
 
             </View>
             <QuickLinks />
+            
           </View>
 
         }

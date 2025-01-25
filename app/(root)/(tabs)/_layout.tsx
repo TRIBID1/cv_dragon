@@ -9,7 +9,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Drawerlayout = () => {
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
+    <GestureHandlerRootView style={{ flex: 1 }} >
       <Drawer drawerContent={CustomDrawerContent}>
         <Drawer.Screen
           name="mytask"
@@ -157,6 +157,14 @@ const Drawerlayout = () => {
             drawerIcon: ({ color, size }) => (
               <Ionicons name="settings-outline" size={24} color="black" />
             ),
+          }}
+        />
+        <Drawer.Screen
+          name="index"
+          options={{
+            drawerLabel: "",
+            title: "",
+            
           }}
         />
       </Drawer>

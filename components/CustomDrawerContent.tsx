@@ -9,7 +9,7 @@ export default function CustomDrawerContent(props: any) {
     const router = useRouter();
 
     return (
-        <View className="flex-1">
+        <View  className="flex-1" >
             <DrawerContentScrollView {...props} scrollEnabled={true}>
                 <View style={styles.banner}>
                     <View style={styles.sliderBanner}>
